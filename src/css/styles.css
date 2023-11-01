@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  font: normal 20px 'Roboto', sans-serif;
+  text-align: center;
+}
+
+body {
+  background-color: #f1f1f1
+}
+
+#info {
+  margin-inline: auto;
+  margin-bottom: 5%;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 15px;
+  color: #141414;
+  background-color: #A89F91;
+}
+
+/*header,*/
+/*footer {*/
+/*  z-index: 10;*/
+/*  width: 100%;*/
+/*  position: fixed;*/
+/*  color: white;*/
+/*  background-color: #000720;*/
+/*  left: 0;*/
+/*}*/
+
+thead * {
+  margin-top: 4%
+}
+
+tfoot * {
+  margin-bottom: 4% !important
+}
+
+#mainTable {
+  width: 75%;
+  margin: 80px auto;
+}
+
+input,
+svg {
+  width: 100%;
+  border: 2px solid greenyellow;
+  border-radius: 20px;
+  background-color: white;
+}
+
+input[type=radio] {
+  float:right;
+  width: 50px;
+}
+
+input {
+  cursor: pointer;
+}
+
+svg {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  bottom: 80px;
+  stroke: rgba(0, 0, 0, 0.92);
+  fill: greenyellow;
+}
+
+figure img {
+  width: 95px;
+  height: 55px;
+}
+
+figcaption {
+  font-size: 0.8em
+}
+
+#credit {
+  padding-bottom: 20px;
+}
+
+.animated:hover {
+  transition: 0.5s
+}
+
+.animated:hover {
+  transform: scale(1.05)
+}
+
+.illuminated:hover,
+.illuminated:focus {
+  box-shadow: 0 0 40px 5px greenyellow;
+  outline: none;
+}
+
+.success {
+  font-weight: bold;
+  color: green;
+}
+
+.fail {
+  font-weight: bold;
+  color: red;
+}
+
+hr {
+  color: greenyellow;
+  width: 95%;
+}
+
+.notification {
+  color: white;
+  padding: 1%;
+}
+
+.outputStub {
+  background-color: #000720;
+}
+
+#outputContainer {
+  padding-bottom: 20px;
+}
+
+.errorStub {
+  background-color: #dc143b
+}
+
+#outputTable {
+  border: 1px solid #A89F91;
+  border-collapse: collapse;
+  margin: auto;
+  width: 90%;
+}
+
+#outputTable th {
+  background-color: greenyellow;
+  color: white;
+}
+
+#outputTable * {
+  padding: 3%;
+}
+
+#checkButton {
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 2px;
+  position: relative;
+  float: right;
+  background-color: greenyellow;
+  border: none;
+  color: white;
+  padding: 15px;
+  width: 150px;
+  transition-duration: 0.4s;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+#checkButton:hover {
+  color: black;
+}
+
+#checkButton::after {
+  content: "";
+  background: greenyellow;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+#checkButton:active::after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+#checkButton:focus {
+  outline: 0
+}
+
+footer {
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  position: fixed;
+  color: #f1f1f1;
+  background-color: #A89F91;
+  left: 0;
+}
+
+
