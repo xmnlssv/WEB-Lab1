@@ -69,26 +69,28 @@ function validateX() {
     x = document.querySelector("input[type=radio]:checked").value;
     return true;
   } catch (err) {
-    createNotification("Значение X не выбрано");
+    createNotification("Значение X Не выбрано");
     return false;
   }
 }
 
 function validateY() {
   y = document.querySelector("input[name=Y-input]").value.replace(",", ".");
+  const expPattern = /[+\-]?(\d+(\.\d*)?|\.\d+)([eE][+\-]?\d+)?/;
   if (y === undefined) {
     createNotification("Y не введён");
     return false;
   } else if (!isNumeric(y)) {
-    createNotification("Y не число");
+    createNotification("Y Не число");
+    return false;
+  } else if (expPattern.test(y)) {
+    createNotification("Y не должен быть в экспоненциальной форме");
     return false;
   } else if (!((y > -3) && (y < 5))) {
     createNotification("Y не входит в область допустимых значений");
     return false;
-  } else if (!/^-?\d+(\.d\+)?$/.test(y)) {
-    createNotification("Y не число");
-    return false;
-  } else return true;
+  } else
+    return true;
 }
 
 function validateR() {
