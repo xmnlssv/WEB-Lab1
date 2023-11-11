@@ -42,31 +42,12 @@ document.getElementById("checkButton").onclick = function () {
     })
       .then(response => response.text())
       .then(function (serverAnswer) {
-        // updatePointerPosition(serverAnswer);
         localStorage.setItem("session", serverAnswer);
         document.getElementById("outputContainer").innerHTML = serverAnswer;
       })
       .catch(err => createNotification("Ошибка HTTP " + err.status + ". Повторите попытку позже." + err));
   }
 };
-
-// function updatePointerPosition(serverAnswer) {
-//   const parser = new DOMParser();
-//   const doc = parser.parseFromString(serverAnswer, "text/html");
-//   const row = doc.querySelectorAll('tr')[1];
-//   if (!row) return;
-//
-//   const cells = row.getElementsByTagName("td");
-//   const last = cells[3];
-//
-//   // let pointer = document.getElementById("pointer");
-//
-//   // pointer.style.visibility = "visible";
-//   // pointer.style.fill = last.innerHTML.includes("success") ? "#09a53d" : "#a50909";
-//   //
-//   // pointer.setAttribute("cx", x * 60 * 2 / r + 150);
-//   // pointer.setAttribute("cy", -y * 60 * 2 / r + 150);
-// }
 
 function createNotification(message) {
   let outputContainer = document.getElementById("outputContainer");
@@ -103,6 +84,9 @@ function validateY() {
     return false;
   } else if (!((y > -3) && (y < 5))) {
     createNotification("Y не входит в область допустимых значений");
+    return false;
+  } else if (!/^-?\d+(\.d\+)?$/.test(y)) {
+    createNotification("Y не число");
     return false;
   } else return true;
 }
