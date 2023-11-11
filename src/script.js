@@ -76,7 +76,7 @@ function validateX() {
 
 function validateY() {
   y = document.querySelector("input[name=Y-input]").value.replace(",", ".");
-  const expPattern = /[+\-]?(\d+(\.\d*)?|\.\d+)([eE][+\-]?\d+)?/;
+  const expPattern = /^[+\-]?\d+(\.\d+)?([eE][+\-]?\d+)$/;
   if (y === undefined) {
     createNotification("Y не введён");
     return false;
