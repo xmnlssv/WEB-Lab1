@@ -16,8 +16,22 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
 date_default_timezone_set($_POST["timezone"]);
 
+//function roundY($y) {
+//    $precision = $y < 0 ? 3 : 4;
+//    $multiplier = pow(10, $precision);
+//    return ceil($y * $multiplier) / $multiplier;
+//}
+
+function roundY($y) {
+    if ($y < 0) {
+        return ceil($y * 1000) / 1000;
+    } else {
+        return floor($y * 10000) / 10000;
+    }
+}
+
 $x = (float) $_POST["x"];
-$y = (float) $_POST["y"];
+$y = (float) roundY($_POST["y"]);
 $r = (float) $_POST["r"];
 
 $validator = new CoordinatesValidator($x, $y, $r);
@@ -66,3 +80,5 @@ if ($validator->checkData()) {
     http_response_code(422);
     return;
 }
+
+

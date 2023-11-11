@@ -32,4 +32,10 @@ class CoordinatesValidator
     {
         return in_array($this->r, array(1, 2, 3, 4, 5));
     }
+
+//    private function roundY($y) {
+//        $precision = $y < 0 ? 3 : 4;
+//        $multiplier = pow(10, $precision);
+//        return ceil($y * $multiplier) / $multiplier;
+//    }
 }
