@@ -16,12 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
 date_default_timezone_set($_POST["timezone"]);
 
-//function roundY($y) {
-//    $precision = $y < 0 ? 3 : 4;
-//    $multiplier = pow(10, $precision);
-//    return ceil($y * $multiplier) / $multiplier;
-//}
-
 function roundY($y) {
     if ($y < 0) {
         return ceil($y * 1000) / 1000;
